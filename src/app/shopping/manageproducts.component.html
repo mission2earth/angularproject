@@ -1,4 +1,8 @@
-<h4>Manage Products</h4>
+<h4>Manage Products - as on : <b> {{myDate| date : "dd-MM-yyyy"}}</b></h4>
+
+<form>
+  Search <input [(ngModel)]="queryString" name = "txtSearch">
+</form>
 <table class="table table-bordered">
   <tr>
     <th>Id</th>
@@ -9,10 +13,11 @@
   <tr *ngIf="manageproducts.length==0">
     <th colspan="4">No Products found</th>
   </tr>
-  <tr *ngFor="let product of manageproducts">
+  <tr *ngFor="let product of manageproducts | filterData:queryString:'name'">
     <td><b>{{product.id}}</b></td>
-    <td><b>{{product.name}}</b></td>
-    <td>{{product.price}}</td>
+    <td><b>{{product.name }}</b></td>
+    <td>{{product.price | currency :'INR'}}</td>
     <td>{{product.description}}</td>
+
      </tr>
 </table>

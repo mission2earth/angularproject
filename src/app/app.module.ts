@@ -7,10 +7,14 @@ import { ShoppingModule } from "./shopping/shopping.module";
 import { HomeComponent, ShoppingListComponent, NotFoundComponent } from "./menulinks.components";
 import { RouterModule } from "@angular/router"
 import { HttpClientModule } from "@angular/common/http"
+import { ProductsComponent } from "./shopping/products.component";
 
 let appRoutes =[
     {path :"", component : HomeComponent},
-    {path : "list", component : ShoppingListComponent}, 
+    {path : "list", component : ShoppingListComponent, children:[
+        {path: "", component: ProductsComponent},
+        {path: ":ctgid", component:ProductsComponent}
+    ]}, 
     {path : "**", component : NotFoundComponent}
 ]
 

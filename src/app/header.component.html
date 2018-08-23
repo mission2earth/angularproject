@@ -1,0 +1,35 @@
+<nav class="navbar bg-dark navbar-dark navbar-expand-sm">
+    
+    <a routerLink ="/" class="navbar-brand">
+        
+        <img src = "assets/images/angular-logo.png" 
+        style="width: 120px; height: 30px"/>  &nbsp;
+       <span>{{appTitle}}</span>
+    </a> <br>
+    
+     
+       
+        <ul class="navbar-nav  mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/">Home</a>
+            </li>        
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/signin">Sign In</a>
+            </li>        
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/register">Register</a>
+            </li>        
+            <li class="nav-item">
+                <a class="nav-link" routerLink ="/list">Shopping List</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" routerLink ="/manage">Manage Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink ="/categories">Categories</a>
+                </li>
+        </ul>
+
+        <span class="navbar-text text-white"> Welcome <b> {{showUserName()}}</b></span>
+  
+     </nav>
